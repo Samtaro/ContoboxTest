@@ -2,7 +2,12 @@ html,body{
   background-color: #ccc;
   height: 100vh;
 }
-
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 .contobox-container{
   display: flex;
   justify-content: center;
@@ -18,17 +23,17 @@ html,body{
   display: flex;
   align-items: flex-end;
 }
-
+/*ConnectContainer*/
 .connect-container{
   font-family: "Helvetica";
-  width: 100%;
+  min-width: 100%;
   height: 175px;
   background-color: rgba(0,0,0,0.5);
   padding-top: 3%;
   padding-right: 16.66%;
   padding-left: 20%;
   color: rgb(31,199,192);
-  animation: suckedIn 2s 2s;
+  animation: fadeOut 1s 16s, collapse .1s 17s;
   animation-fill-mode: forwards;
 }
 .connect-container hr{
@@ -48,55 +53,79 @@ html,body{
   margin: 1px auto;
 }
 
-/*
+
 .connect-container p:first-child{
-  animation: type 4s steps(60, end);
+  animation: type 2s steps(60, end) ;
+  animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(2){
-  animation: type2 4s steps(60, end);
+  animation: type 2s steps(60, end) 1.5s;
+  animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(3){
-  animation: type3 5s steps(60, end);
+  animation: type 2s steps(60, end) 3s;
+  animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(4){
-  animation: type4 8s steps(60, end);
+  animation: type 2s steps(60, end) 4.7s;
+  animation-fill-mode: backwards;
 }
-
+.connect-container p:nth-child(6){
+  animation: type 2s steps(60, end) 6.2s;
+  animation-fill-mode: backwards;
+}
+.connect-container p:nth-child(7){
+  animation: type 2s steps(60, end) 8s;
+  animation-fill-mode: backwards;
+}
+.connect-container p:nth-child(8){
+  animation: type 2s steps(60, end) 9.5s;
+  animation-fill-mode: backwards;
+}
+.connect-container p:nth-child(10){
+  animation: type 2s steps(60, end) 11s;
+  animation-fill-mode: backwards;
+}
+.connect-container p:nth-child(11){
+  animation: type 2s steps(60, end) 12.5s;
+  animation-fill-mode: backwards;
+}
+.connect-container p:nth-child(12){
+  animation: type 2s steps(60, end) 14s;
+  animation-fill-mode: backwards;
+}
 @keyframes type{
   from { width: 0; }
 }
-@keyframes type2{
-  0%{width: 0;}
-  50%{width: 0;}
-  100%{ width: 100; }
+
+@keyframes fadeOut{
+  0%{opacity: 1;}
+  100%{opacity: 0;}
 }
-@keyframes type3{
-  0%{width: 0;}
-  70%{width: 0;}
-  100%{ width: 100; }
+@keyframes collapse{
+  0%{width: 100%;}
+  100%{width: 0; min-width: 0; padding: 0}
 }
-@keyframes type4{
-  0%{width: 0;}
-  70%{width: 0;}
-  100%{ width: 100; }
+
+
+/*VideoContainer*/
+.video-container{
+  overflow: hidden;
+  display: flex;
+  min-width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
-@keyframes type5{
-  0%{width: 0;}
-  50%{width: 0;}
-  100%{ width: 100; }
+.video-container img{
+  width: 200px;
+  height: 150px;
+  animation: fadeIn 1s 17.5s;
+  animation-fill-mode: backwards;
 }
-@keyframes type6{
-  0%{width: 0;}
-  50%{width: 0;}
-  100%{ width: 100; }
-}
-@keyframes type7{
-  0%{width: 0;}
-  50%{width: 0;}
-  100%{ width: 100; }
-}
-*/
-@keyframes suckedIn{
-  0%{width: 100; height: 100;}
-  100%{width: 0; opacity: 0}
+
+@keyframes fadeIn{
+  0%{visibility: hidden; opacity: 0}
+  70%{visibility: hidden; opacity: 0}
+  100%{visibility: visible; opacity 1}
 }
