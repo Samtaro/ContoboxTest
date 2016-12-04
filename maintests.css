@@ -33,7 +33,7 @@ html {
   padding-right: 16.66%;
   padding-left: 20%;
   color: rgb(31,199,192);
-  animation: fadeOut 1s 8s, collapse .1s 9s;
+  animation: fadeOut 1s 16s, collapse .1s 17s;
   animation-fill-mode: forwards;
 }
 .connect-container hr{
@@ -55,43 +55,43 @@ html {
 
 
 .connect-container p:first-child{
-  animation: type 1s steps(60, end) ;
+  animation: type 2s steps(60, end) ;
   animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(2){
-  animation: type 1s steps(60, end) 0.8s;
+  animation: type 2s steps(60, end) 1.5s;
   animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(3){
-  animation: type 1s steps(60, end) 1.6s;
+  animation: type 2s steps(60, end) 3s;
   animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(4){
-  animation: type 1s steps(60, end) 2.6s;
+  animation: type 2s steps(60, end) 4.7s;
   animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(6){
-  animation: type 1s steps(60, end) 3.4s;
+  animation: type 2s steps(60, end) 6.2s;
   animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(7){
-  animation: type 1s steps(60, end) 4.4s;
+  animation: type 2s steps(60, end) 8s;
   animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(8){
-  animation: type 1s steps(60, end) 5.2s;
+  animation: type 2s steps(60, end) 9.5s;
   animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(10){
-  animation: type 1s steps(60, end) 6s;
+  animation: type 2s steps(60, end) 11s;
   animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(11){
-  animation: type 1s steps(60, end) 6.8s;
+  animation: type 2s steps(60, end) 12.5s;
   animation-fill-mode: backwards;
 }
 .connect-container p:nth-child(12){
-  animation: type 1s steps(60, end) 7.6s;
+  animation: type 2s steps(60, end) 14s;
   animation-fill-mode: backwards;
 }
 @keyframes type{
@@ -110,7 +110,7 @@ html {
 
 /*VideoContainer*/
 .video-container{
-  overflow: hidden;
+  /*overflow: hidden;*/
   display: flex;
   flex-flow: column;
   min-width: 100%;
@@ -118,67 +118,41 @@ html {
   justify-content: center;
   align-items: center;
 }
-.media-container{
-  margin: 0.5em auto;
-
-}
-.order-container{
-  animation: expandcontainer 1s 16s;
-  animation-fill-mode: forwards;
-  display: flex;
-
-}
-.rollover-container{
-  display: flex;
-  flex-flow: column;
-}
-@keyframes expandcontainer{
-    0%{}
-    100%{height: 70%; width: 90%}
-}
 #vimg1{
   align-self: flex-start;
   margin-top: 1em;
   margin-left: 3em;
-  animation: expand1 13s, collapse2 .1s 16s;
   animation-fill-mode: both;
+  animation: expand1 3s;
 }
 #vimg2{
   width: 162px;
   height: 120px;
   margin-left: .5em;
-  animation: fadeIn 3s 7s, contract 1s 10s, fadeOut 1s 15s, collapse2 1s 16s;
-  animation-fill-mode: both;
+  /*animation: fadeIn 1s 17.5s;*/
+  animation: contract 2s;
+  animation-fill-mode: backwards;
 }
 #vimg3{
   position: relative;
   top: 50%;
   transform: translateY(-30%);
   margin-left: -.3em;
-  animation: expand3 13s, fadeOut 1s 15s, collapse2 1s 16s;
-  animation-fill-mode: forwards;
-}
-#vimg4{
-  animation: expand4 17s;
-  animation-fill-mode: forwards;
-}
-#vimg5{
-  animation: expand5 17s;
-  animation-fill-mode: forwards;
-}
-#vimg6{
-  margin-bottom: 0.2em;
-  animation: expand6 13s;
+  animation: expand2 3s;
 }
 
-#vimg7{
-  animation: expand7 13s;
+#vimg4{
+  margin-bottom: 0.2em;
+  animation: expand3 3s;
+}
+
+#vimg5{
+  animation: expand4 3s;
 }
 
 @keyframes fadeIn{
-  0%{visibility: hidden; opacity: 0; width: 0; height:0 }
-  33%{visibility: hidden; opacity: 0;  height:150px;width: 200px;}
-  90%{visibility: hidden; opacity: 0}
+  0%{visibility: hidden; opacity: 0}
+  70%{visibility: hidden; opacity: 0}
   100%{visibility: visible; opacity 1}
 }
 
@@ -187,40 +161,26 @@ html {
   50%{height: 150px; width: 200px;}
   100%{height: 120px; width: 162px;}
 }
-
-@keyframes collapse2{
-  0%{}
-  100%{height: 0; width: 0;}
-}
 @keyframes expand1{
   0%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  85%{visibility: hidden; height: 0; width: 0; opacity: 0}
+  67%{visibility: hidden; height: 0; width: 0; opacity: 0}
   100%{visibility: visible; height: 30px; width: 120px; opacity: 1}
+}
+
+@keyframes expand2{
+  0%{visibility: hidden; height: 0; width: 0; opacity: 0}
+  67%{visibility: hidden; height: 0; width: 0; opacity: 0}
+  100%{visibility: visible; height: 71px; width: 117px; opacity: 1}
 }
 
 @keyframes expand3{
   0%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  85%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  100%{visibility: visible; height: 71px; width: 117px; opacity: 1}
-}
-@keyframes expand4{
-  0%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  94%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  100%{visibility: visible; height: 170px; width: 147px; opacity: 1}
-}
-@keyframes expand5{
-  0%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  94%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  100%{visibility: visible; height: 90px; width: 135px; opacity: 1}
-}
-@keyframes expand6{
-  0%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  85%{visibility: hidden; height: 0; width: 0; opacity: 0}
+  67%{visibility: hidden; height: 0; width: 0; opacity: 0}
   100%{visibility: visible; height: 27px; width: 131px; opacity: 1}
 }
 
-@keyframes expand7{
+@keyframes expand4{
   0%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  85%{visibility: hidden; height: 0; width: 0; opacity: 0}
+  67%{visibility: hidden; height: 0; width: 0; opacity: 0}
   100%{visibility: visible; height: 33px; width: 271px; opacity: 1}
 }
