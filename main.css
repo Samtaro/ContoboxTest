@@ -110,6 +110,7 @@ html {
 
 /*VideoContainer*/
 .video-container{
+  position: relative;
   overflow: hidden;
   display: flex;
   flex-flow: column;
@@ -119,59 +120,69 @@ html {
   align-items: center;
 }
 .media-container{
-  margin: 0.5em auto;
-
+  position: relative;
+  animation: unmargin 18s;
+  animation-fill-mode: both;
 }
 .order-container{
-  animation: expandcontainer 1s 16s;
+  position: relative;
+  /*animation: expandcontainer 5s 18s;*/
   animation-fill-mode: forwards;
   display: flex;
+  justify-content: space-around;
 
 }
 .rollover-container{
+  position: relative;
   display: flex;
   flex-flow: column;
+  animation: marginroll 18s;
+  animation-fill-mode: forwards;
 }
 @keyframes expandcontainer{
-    0%{}
-    100%{height: 70%; width: 90%}
+    0%{height: 30.19px; width: 130px}
+    100%{height: 70%; width: 100%}
 }
 #vimg1{
+  position: absolute;
+  top: 20px;
   align-self: flex-start;
-  margin-top: 1em;
   margin-left: 3em;
-  animation: expand1 13s, collapse2 .1s 16s;
+  animation: expand1 13s, collapse1 2s 16s;
   animation-fill-mode: both;
 }
 #vimg2{
-  width: 162px;
-  height: 120px;
+  width: 200px;
+  height: 150px;
   margin-left: .5em;
-  animation: fadeIn 3s 7s, contract 1s 10s, fadeOut 1s 15s, collapse2 1s 16s;
-  animation-fill-mode: both;
+  animation: fadeIn 3s 7s, contract 1s 10s, fadeOut 1s 15s, collapse2 2s 16s;
+  animation-fill-mode: forwards;
 }
 #vimg3{
   position: relative;
   top: 50%;
   transform: translateY(-30%);
   margin-left: -.3em;
-  animation: expand3 13s, fadeOut 1s 15s, collapse2 1s 16s;
+  animation: expand3 13s, fadeOut 1s 15s, collapse3 2s 16s;
   animation-fill-mode: forwards;
 }
 #vimg4{
-  animation: expand4 17s;
+  animation: expand4 19s;
   animation-fill-mode: forwards;
 }
 #vimg5{
-  animation: expand5 17s;
-  animation-fill-mode: forwards;
+  animation: expand5 18s;
+  animation-fill-mode: both;
 }
 #vimg6{
-  margin-bottom: 0.2em;
-  animation: expand6 13s;
+  /*margin-top: 0.4em;*/
+  animation: expand6 13s, marginme 18s;
+  animation-fill-mode: forwards;
 }
 
 #vimg7{
+  position: absolute;
+  bottom: 0;
   animation: expand7 13s;
 }
 
@@ -188,30 +199,53 @@ html {
   100%{height: 120px; width: 162px;}
 }
 
-@keyframes collapse2{
-  0%{}
-  100%{height: 0; width: 0;}
-}
+
 @keyframes expand1{
   0%{visibility: hidden; height: 0; width: 0; opacity: 0}
   85%{visibility: hidden; height: 0; width: 0; opacity: 0}
   100%{visibility: visible; height: 30px; width: 120px; opacity: 1}
 }
-
+@keyframes collapse1{
+  0%{height: 30px; width: 120px;}
+  100%{height: 0; width: 0;}
+}
+@keyframes collapse2{
+  0%{height: 120px; width: 162px;}
+  100%{height: 0; width: 0;}
+}
 @keyframes expand3{
   0%{visibility: hidden; height: 0; width: 0; opacity: 0}
   85%{visibility: hidden; height: 0; width: 0; opacity: 0}
   100%{visibility: visible; height: 71px; width: 117px; opacity: 1}
 }
+@keyframes collapse3{
+  0%{height: 71px; width: 117px;}
+  100%{height: 0; width: 0;}
+}
 @keyframes expand4{
   0%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  94%{visibility: hidden; height: 0; width: 0; opacity: 0}
-  100%{visibility: visible; height: 170px; width: 147px; opacity: 1}
+  90%{visibility: hidden; height: 0; width: 0; opacity: 0}
+  100%{visibility: visible; height: 181px; width: 165px; opacity: 1}
 }
 @keyframes expand5{
   0%{visibility: hidden; height: 0; width: 0; opacity: 0}
   94%{visibility: hidden; height: 0; width: 0; opacity: 0}
   100%{visibility: visible; height: 90px; width: 135px; opacity: 1}
+}
+@keyframes marginme{
+  0%{margin: 0}
+  94%{margin: 0}
+  100%{margin-top: 0.4em}
+}
+@keyframes marginroll{
+  0%{margin: 0}
+  94%{margin: 0}
+  100%{margin: 10px 0 0 -20px;}
+}
+@keyframes unmargin{
+  0%{margin: 0.5em auto;}
+  94%{margin: 0.5em auto;}
+  100%{margin: 0;}
 }
 @keyframes expand6{
   0%{visibility: hidden; height: 0; width: 0; opacity: 0}
